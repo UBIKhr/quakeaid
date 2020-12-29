@@ -326,5 +326,108 @@
 		})
 	});
 
+	$(".btn.donate").click(async function(e) {
+		const allInjected = await enable();
+		if (window.dappex.isWeb3Injected) {
+			const accounts = await window.dappex.web3Accounts();
+			const { value: amount } = await Swal.fire({
+				title: 'How much would you like to donate?',
+				input: 'text',
+				inputLabel: 'Amount',
+				inputValue: 100,
+				showCancelButton: true,
+				inputValidator: (value) => {
+					if (!value) {
+						return 'Please enter an amount'
+					}
+				},
+				icon: 'question',
+				confirmButtonText: 'Choose account'
+			})
+
+			let accs = {};
+			if (accounts.length) {
+				for (let i = 0; i < accounts.length; i++) {
+					let label = accounts[i].meta.name;
+					let address = accounts[i].address;
+					accs[address] = `${address} - ${label}`;
+				}
+			}
+			
+			const { value: account } = await Swal.fire({
+				title: 'Which account should we use?',
+				input: 'select',
+				inputOptions: accs,
+				inputPlaceholder: 'Select your account',
+				showCancelButton: true,
+				icon: 'question',
+				confirmButtonText: 'Donate'
+			})
+
+			pay(amount, account, $(e.currentTarget).data("chain"));
+    } else {
+			Swal.fire({
+				title: 'Error',
+				text: "Could not detect Polkadot JS extension, or could not load accounts.",
+				icon: 'error',
+				confirmButtonText: "I'll try harder"
+			})
+    }
+	});
+
 })(jQuery);
 
+async function enable() {
+	return window.dappex.web3Enable("Quake Aid");
+}
+
+async function pay(amount, account, chain) {
+	console.log(amount);
+	console.log(account);
+	console.log(chain);
+
+	const SENDER = account;
+	const injector = await window.dappex.web3FromAddress(SENDER);
+
+	let config = {
+		kusama: {
+			rpc: "wss://kusama-rpc.polkadot.io",
+			recipient: "EDXNvKkwkgZeb3a7Bcdb4Qc2SRts31YoS682QwGcUkd3NuQ",
+			e: 12
+		},
+		polkadot: {
+			rpc: "wss://rpc.polkadot.io",
+			recipient: "1EFDtGiyF1Bffig45ZxiCnfEvsrGNAQqguD55Ao3e9pGhwP",
+			e: 10
+		}
+	}
+
+	let e = config[chain].e;
+
+	// Make API instance based on chain
+	const wsProvider = new window.api.WsProvider(config[chain].rpc);
+	const api = await window.api.ApiPromise.create({ provider: wsProvider });
+
+	// Decide amount
+	let amt = amount * 10^e;
+
+	// Create TX
+	api.tx.balances
+  .transfer(config[chain].recipient, parseInput(amount, e))
+  .signAndSend(SENDER, { signer: injector.signer }, (status) => { console.log(status) });
+}
+
+const BN_TEN = new BN(10);
+function parseInput (value, decimals) {
+  const decimal = value.trim().match(/^(\d+)\.(\d+)$/);
+  if (decimal) {
+    const div = new BN(decimal[1]);
+    const modString = decimal[2].substr(0, decimals);
+    const mod = new BN(modString);
+
+    return div
+      .mul(BN_TEN.pow(new BN(decimals)))
+      .add(mod.mul(BN_TEN.pow(new BN(decimals - modString.length))));
+  }
+  return new BN(value.trim()).mul(BN_TEN.pow(new BN(decimals)));
+};
