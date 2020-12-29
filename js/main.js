@@ -414,7 +414,21 @@ async function pay(amount, account, chain) {
 	// Create TX
 	api.tx.balances
   .transfer(config[chain].recipient, parseInput(amount, e))
-  .signAndSend(SENDER, { signer: injector.signer }, (status) => { console.log(status) });
+  .signAndSend(SENDER, { signer: injector.signer }, (status) => { 
+		Swal.fire({
+			title: 'Thank you!',
+			text: "Transaction sent!",
+			icon: 'success',
+			confirmButtonText: "Yay!"
+		})
+	 }).catch( function(error) {
+		Swal.fire({
+			title: 'Error',
+			text: "Canceled transaction. Need help? Contact info@ubik.hr!",
+			icon: 'error',
+			confirmButtonText: "OK"
+		})
+	});
 }
 
 const BN_TEN = new BN(10);
