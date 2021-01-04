@@ -55,7 +55,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #24292e;
   text-align: left;
   background-color: #fff; }
 
@@ -133,11 +133,11 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: #000; 
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: #0056b3;
+    color: #e6007a;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -9565,4 +9565,28 @@ body > * {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.background-dot {
+  background-image: url("../images/dotksm.png");
+  background-size: 25%;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;  
+}
+
+.background-btc-eth {
+  background-image: url("../images/btceth.png");
+  background-size: 1%;
+  background-position: 100%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .background-dot {
+    background-image: none;
+  }
+
+  .background-btc-eth{
+    background-image: none;
+  }
 }

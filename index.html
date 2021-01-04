@@ -25,11 +25,15 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://unpkg.com/@shardlabs/kusama-tips-widget@latest/dist/bundle.min.js"></script>
+  <script src="https://unpkg.com/@shardlabs/polkadot-donation-widget@latest/dist/bundle.min.js"></script>
+
   </head>
   <body>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Quake Aid for Petrinja<span>.</span></a>
+	      <a class="navbar-brand" href="index.html" >Quake Aid for Petrinja<span>.</span></a>
 	      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button> -->
@@ -53,7 +57,7 @@
         <div class="row no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
           <div class="col-md-6 order-md-last ftco-animate mt-5" data-scrollax=" properties: { translateY: '70%' }">
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Help Petrinja recover</h1>
-            <p style="font-weight: 400; color: black; background-color: rgba(255,255,255,0.7); padding: 5px">On December 29th, Petrinja suffered a <a href="https://www.emsc-csem.org/Earthquake/earthquake.php?id=933701">massive earthquake</a>. The damage was severe, and the rubble is still being cleared out. To help Red Cross' efforts in assisting the town and its neighbors, we've set up a donation campaign that's 100% crypto friendly.</p>
+            <p style="font-weight: 400; color: black; background-color: rgba(255,255,255,0.7); padding: 5px">On December 29th, Petrinja suffered a <a href="https://www.emsc-csem.org/Earthquake/earthquake.php?id=933701" target=”_blank” rel=noopener noreferrer”>massive earthquake</a>. The damage was severe, and the rubble is still being cleared out. To help Red Cross' efforts in assisting the town and its neighbors, we've set up a donation campaign that's 100% crypto friendly.</p>
             <!-- <p><a href="#" class="btn btn-black py-3 px-4">How Can I Help?</a></p> -->
           </div>
           <div class="col-md-6 d-none d-md-block">
@@ -63,37 +67,51 @@
       </div>
     </div>
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-volunteer">
-    	<div class="container">
+    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-volunteer my-5">
+    	<div class="container-fluid">
     		<div class="row">
-    			<div class="col-md-7 img-volunteer" style="background-image: url(images/dotksm.png); background-size: contain;">
-    				<div class="row no-gutters justify-content-end">
-    					<div class="col-lg-7">
+    			<div class="col-md-7 d-flex flex-column background-dot">
+    				<div class="row no-gutters justify-content-around">
+              <div class="col-md-7">
     						<div class="text py-5 pl-md-4 pr-md-3">
-    							<h2 class="mb-4" style="background-color: rgba(255,255,255,0.5);">Donate DOT or KSM directly</h2>
-                  <p class="greytext">If you own any DOT (<a href="https://polkadot.network">Polkadot</a>) or KSM (<a href="https://kusama.network">Kusama</a>) tokens, you can donate them directly due to Red Cross not supporting these cryptocurrencies yet. To learn how they're liquidated and the proceeds sent to the right people, follow the button below:</p>
-                  <!-- <p><a href="#" class="btn btn-black py-3 px-4">How does it work?</a></p> -->
-    							<p><a href="javascript:void(0);" id="howdoesitwork" class="btn btn-primary py-3 px-4">How does it work?</a></p>
+    							<h2 class="mb-4" style="color: #24292e; font-size: 40px;">Donate DOT or KSM directly</h2>
+                  <p class="mb-4">If you own any DOT (<a href="https://polkadot.network" target=”_blank” rel=noopener noreferrer”>Polkadot</a>) or KSM (<a href="https://kusama.network" target=”_blank” rel=noopener noreferrer”>Kusama</a>) tokens, you can donate them directly due to Red Cross not supporting these cryptocurrencies yet. To learn how they're liquidated and the proceeds sent to the right people, follow the button below:</p>
+    							<div class="d-flex justify-content-center"><a href="javascript:void(0);" id="howdoesitwork" class="btn btn-primary py-3 px-4">How does it work?</a></div>
     						</div>
-    					</div>
+    				  </div>
     				</div>
     			</div>
-    			<div class="col-md-5 d-flex align-items-center bg-red">
-    				<div class="about-text py-5 pl-md-5">
+    			<div class="col-md-5">
+    				<div class="row d-flex flex-column no-gutters py-5 pl-md-5  justify-content-around align-content-center">
               <!-- <h2>KSM donations so far <strong class="number" style="color: black" data-number="380000">0</strong></h2>
               <h2>DOT donations so far <strong class="number" style="color: black" data-number="50000">0</strong></h2> -->
-              <h2>KSM address:</h2>
-              <h4 title="EDXNvKkwkgZeb3a7Bcdb4Qc2SRts31YoS682QwGcUkd3NuQ" class="ellipsed"><a href="https://polkascan.io/kusama/account/EDXNvKkwkgZeb3a7Bcdb4Qc2SRts31YoS682QwGcUkd3NuQ">EDXNvKkwkgZeb3a7Bcdb4Qc2SRts31YoS682QwGcUkd3NuQ</a></h4>
-              <p style="display: inline-block;">
-                
+              <h2 style="color: #24292e; font-size: 40px;">KSM address:</h2>
+              <h4 title="EDXNvKkwkgZeb3a7Bcdb4Qc2SRts31YoS682QwGcUkd3NuQ" class="ellipsed mb-4"><a href="https://polkascan.io/kusama/account/EDXNvKkwkgZeb3a7Bcdb4Qc2SRts31YoS682QwGcUkd3NuQ" target=”_blank” rel=noopener noreferrer”>EDXNvKkwkgZeb3a7Bcdb4Qc2SRts31YoS682QwGcUkd3NuQ</a></h4>
+              <div class="d-flex justify-content-center mb-4"> 
                 <a href="javascript:void(0);" class="btn btn-black py-3 px-4 donate" data-chain="kusama" id="donateksm">Donate KSM</a>
-              </p>
-              <h2>DOT address:</h2>
-              <h4 title="1EFDtGiyF1Bffig45ZxiCnfEvsrGNAQqguD55Ao3e9pGhwP" class="ellipsed"><a href="https://polkascan.io/polkadot/account/1EFDtGiyF1Bffig45ZxiCnfEvsrGNAQqguD55Ao3e9pGhwP">1EFDtGiyF1Bffig45ZxiCnfEvsrGNAQqguD55Ao3e9pGhwP</a></h4>
-              <p style="display: inline-block;">
-                
+              </div>
+            <!-- <div id="ksm" class="d-flex justify-content-center mb-4">
+                 <script>
+                  kusamaTipsWidget.bind(document.getElementById("ksm"), {
+                    beneficiary: "EDXNvKkwkgZeb3a7Bcdb4Qc2SRts31YoS682QwGcUkd3NuQ",
+                    allowProposing: false,
+                    element: document.getElementById("my-button"),
+                  });
+                </script>
+              </div> -->
+              <h2 style="color: #24292e; font-size: 40px;">DOT address:</h2>
+              <h4 title="1EFDtGiyF1Bffig45ZxiCnfEvsrGNAQqguD55Ao3e9pGhwP" class="ellipsed mb-4"><a href="https://polkascan.io/polkadot/account/1EFDtGiyF1Bffig45ZxiCnfEvsrGNAQqguD55Ao3e9pGhwP" target=”_blank” rel=noopener noreferrer”>1EFDtGiyF1Bffig45ZxiCnfEvsrGNAQqguD55Ao3e9pGhwP</a></h4>
+              <div class="d-flex justify-content-center">
                 <a href="javascript:void(0);" class="btn btn-black py-3 px-4 donate" data-chain="polkadot" id="donatedot">Donate DOT</a>
-              </p>
+              </div>
+              <!-- <div id="dot" class="d-flex justify-content-center mb-4">
+                <script>
+                  polkadotDonationWidget.bind(document.getElementById("dot"), {
+                    beneficiary: "1EFDtGiyF1Bffig45ZxiCnfEvsrGNAQqguD55Ao3e9pGhwP",
+                    element: document.getElementById("my-button"),
+                  });
+                </script> -->
+              </div>
     				</div>
     			</div>
     		</div>
@@ -101,53 +119,47 @@
     </section>
 
     <div id="howdoesitworktext" style="display:none; opacity: 0; visibility: hidden;">
-    <p>Because Croatia's Red Cross and their payment processor <a href="https://paycek.io">Paycek.io</a> still don't support DOT and KSM, the process is a bit more manual on their end - the DOT and KSM address displayed on this page are deposit addresses on Binance, where a script is configured to automatically trade the tokens for another token that <a href="https://paycek.io">Paycek.io</a> <strong>does</strong> support.</p><p>The token is then sent to the service for automatic liquidation, as if the donation were paid in one of the other, supported currencies. We realize there is a big trust factor at play here, so we invite you to contact Electrocoin and UBIK, the two organizations behind this effort, before committing to any donation. The contact information is in the footer, along with office addresses and VAT numbers of both entities.</p>
-    <p>There are two ways to donate. You will either need the <a href="https://github.com/polkadot-js/extension">Polkadot JS Extension</a> installed and the account you're donating from will need to have some tokens in it, or you can just donate directly to the respective address from any wallet or exchange of your choice unrelated to this website.</p>
+    <p>Because Croatia's Red Cross and their payment processor <a href="https://paycek.io" target=”_blank” rel=noopener noreferrer”>Paycek.io</a> still don't support DOT and KSM, the process is a bit more manual on their end - the DOT and KSM address displayed on this page are deposit addresses on Binance, where a script is configured to automatically trade the tokens for another token that <a href="https://paycek.io">Paycek.io</a> <strong>does</strong> support.</p><p>The token is then sent to the service for automatic liquidation, as if the donation were paid in one of the other, supported currencies. We realize there is a big trust factor at play here, so we invite you to contact Electrocoin and UBIK, the two organizations behind this effort, before committing to any donation. The contact information is in the footer, along with office addresses and VAT numbers of both entities.</p>
+    <p>There are two ways to donate. You will either need the <a href="https://github.com/polkadot-js/extension" target=”_blank” rel=noopener noreferrer”>Polkadot JS Extension</a> installed and the account you're donating from will need to have some tokens in it, or you can just donate directly to the respective address from any wallet or exchange of your choice unrelated to this website.</p>
     </div>
 
     <section class="ftco-section ftco-no-pt ftco-no-pb ftco-volunteer">
-    	<div class="container">
+    	<div class="container-fluid">
     		<div class="row widescreen">
-          <div class="col-md-7 d-flex align-items-center bg-red">
-    				<div class="about-text py-5 pl-md-5">
+          <div class="col-md-7 d-flex justify-content-around" style="margin-bottom: 8rem;">
+    				<div class="about-text">
     					<!-- <h2>Donation so far <span>$</span><strong class="number" data-number="380000">0</strong></h2> -->
-              <h2>Visit</h2>
-              <h2><a href="http://bit.ly/ck_petrinja">this link</a></h2>
-              <p class="whitetext">to donate directly in cryptocurrencies like BTC, ETH, XRP, EOS, Stellar, and others!</p>
+              <h2 style="color: #24292e; font-size: 40px;">Visit <a href="http://bit.ly/ck_petrinja" target=”_blank” rel=noopener noreferrer”>this link</a></h2>
+              <p>to donate directly in cryptocurrencies like BTC, ETH, XRP, EOS, Stellar, and others!</p>
     					<!-- <p><a href="#" class="btn btn-black py-3 px-4">Donate now</a></p> -->
     				</div>
     			</div>
-    			<div class="col-md-5 img-volunteer" style="background-image: url(images/hck.jpg); background-size: 30%; background-position-y: 50%;">
-    				<div class="row no-gutters justify-content-end">
-    					<div class="col-lg-7">
-    						<div class="text py-5 pl-md-4 pr-md-3">
-    							<h2 class="mb-4" style="background-color: rgba(255,255,255,0.5);">Donate through Red Cross</h2>
-    							<p class="greytext">Crypto payments supported</p>
+    			<div class="col-md-5 img-volunteer" style="background-image: url(images/hck.jpg); background-size: 10%; background-position: 80% 60%">
+    						<div class="row d-flex flex-column no-gutters pt-5 pl-md-5  justify-content-around align-content-center">
+    							<h4 style="color: #24292e; font-size: 38px; line-height: 0.8;">Donate through Red Cross</h4>
+    							<p class="mt-2">Crypto payments supported</p>
     							<!-- <p><a href="https://bit.ly/ck_petrinja" class="btn btn-primary py-3 px-4">Donate now</a></p> -->
-    						</div>
-    					</div>
-    				</div>
+    					  </div>
     			</div>
         </div>
         
         <div class="row narrowscreen">
-          <div class="col-md-7 img-volunteer" style="background-image: url(images/hck.jpg); background-size: 30%; background-position-y: 50%;">
+          <div class="col-md-7 img-volunteer">
     				<div class="row no-gutters justify-content-end">
     					<div class="col-lg-7">
     						<div class="text py-5 pl-md-4 pr-md-3">
-    							<h2 class="mb-4" style="background-color: rgba(255,255,255,0.5);">Donate through Red Cross</h2>
-    							<p class="greytext">Crypto payments supported</p>
+    							<h2 class="mb-4">Donate through Red Cross</h2>
+    							<p>Crypto payments supported</p>
     							<!-- <p><a href="https://bit.ly/ck_petrinja" class="btn btn-primary py-3 px-4">Donate now</a></p> -->
     						</div>
     					</div>
     				</div>
     			</div>
-          <div class="col-md-5 d-flex align-items-center bg-red">
+          <div class="col-md-5 d-flex align-items-center">
     				<div class="about-text py-5 pl-md-5">
     					<!-- <h2>Donation so far <span>$</span><strong class="number" data-number="380000">0</strong></h2> -->
-              <h2>Visit</h2>
-              <h2><a href="http://bit.ly/ck_petrinja">this link</a></h2>
-              <p class="whitetext">to donate directly in cryptocurrencies like BTC, ETH, XRP, EOS, Stellar, and others!</p>
+              <h2 style="color: #24292e; font-size: 40px;">Visit <a href="http://bit.ly/ck_petrinja" target=”_blank” rel=noopener noreferrer>this link</a></h2>
+              <p>to donate directly in cryptocurrencies like BTC, ETH, XRP, EOS, Stellar, and others!</p>
     					<!-- <p><a href="#" class="btn btn-black py-3 px-4">Donate now</a></p> -->
     				</div>
     			</div>
@@ -158,31 +170,62 @@
 
 
     
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-volunteer">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-7 img-volunteer" style="background-image: url(images/btceth.png); background-size: contain;">
-    				<div class="row no-gutters justify-content-end">
+    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-volunteer mb-5">
+    	<div class="container-fluid">
+    		<div class="row widescreen">
+    			<div class="col-md-7 img-volunteer" style="background-image: url(images/btceth.png); background-size: 25%; background-position: 100%;">
+    				<div class="row no-gutters justify-content-around" style="margin-top: 6rem;">
     					<div class="col-lg-7">
     						<div class="text py-5 pl-md-4 pr-md-3">
-    							<h2 class="mb-4" style="background-color: rgba(255,255,255,0.5);">Donate BTC, Eth, or ERC20 tokens directly</h2>
-                  <p class="greytext">If you'd rather donate directly than through the Red Cross site, please use the following addresses</p>
+    							<h2 class="mt-4" style="color: #24292e; font-size: 40px;">Donate BTC, Eth, or ERC20 tokens directly</h2>
+                  <p>If you'd rather donate directly than through the Red Cross site, please use the following addresses</p>
     						</div>
     					</div>
     				</div>
     			</div>
-    			<div class="col-md-5 d-flex align-items-center bg-red">
-    				<div class="about-text py-5 pl-md-5">
+    			<div class="col-md-5">
+    				<div class="row d-flex flex-column no-gutters py-5 pl-md-5 justify-content-around align-items-center">
               <!-- <h2>KSM donations so far <strong class="number" style="color: black" data-number="380000">0</strong></h2>
               <h2>DOT donations so far <strong class="number" style="color: black" data-number="50000">0</strong></h2> -->
-              <h2>BTC address:</h2>
-              <h4 title="bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q" class="ellipsed"><a href="https://www.blockchain.com/btc/address/bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q">bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q</a></h4>
+              <h2 style="color: #24292e; font-size: 40px;">BTC address:</h2>
+              <h4 title="bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q" class="ellipsed mb-4"><a href="https://www.blockchain.com/btc/address/bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q">bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q</a></h4>
               <p style="display: inline-block;">
                 
                 <!-- <a href="javascript:void(0);" class="btn btn-black py-3 px-4 donate" data-chain="kusama" id="donateksm">Donate KSM</a> -->
               </p>
-              <h2>Eth and ERC20 address:</h2>
-              <h4 title="0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78" class="ellipsed"><a href="https://etherscan.io/address/0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78">0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78</a></h4>
+              <h2 style="color: #24292e; font-size: 40px;">Eth and ERC20 address:</h2>
+              <h4 title="0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78" class="ellipsed" mb-4><a href="https://etherscan.io/address/0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78">0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78</a></h4>
+              <p style="display: inline-block;">
+                
+                <!-- <a href="javascript:void(0);" class="btn btn-black py-3 px-4 donate" data-chain="polkadot" id="donatedot">Donate DOT</a> -->
+              </p>
+    				</div>
+    			</div>
+    		</div>
+
+        	<div class="row narrowscreen">
+    			<div class="col-md-7 img-volunteer">
+    				<div class="row no-gutters justify-content-around" style="margin-top: 6rem;">
+    					<div class="col-lg-7">
+    						<div class="text py-5 pl-md-4 pr-md-3">
+    							<h2 class="mt-4" style="color: #24292e; font-size: 40px;">Donate BTC, Eth, or ERC20 tokens directly</h2>
+                  <p>If you'd rather donate directly than through the Red Cross site, please use the following addresses</p>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-5">
+    				<div class="row d-flex flex-column no-gutters py-5 pl-md-5  justify-content-around align-content-center">
+              <!-- <h2>KSM donations so far <strong class="number" style="color: black" data-number="380000">0</strong></h2>
+              <h2>DOT donations so far <strong class="number" style="color: black" data-number="50000">0</strong></h2> -->
+              <h2 style="color: #24292e; font-size: 40px;">BTC address:</h2>
+              <h4 title="bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q" class="ellipsed mb-4"><a href="https://www.blockchain.com/btc/address/bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q">bc1qk46ufngjwdfeptdekyc6a7le5vh2uvz4xjcq7q</a></h4>
+              <p style="display: inline-block;">
+                
+                <!-- <a href="javascript:void(0);" class="btn btn-black py-3 px-4 donate" data-chain="kusama" id="donateksm">Donate KSM</a> -->
+              </p>
+              <h2 style="color: #24292e; font-size: 40px;">Eth and ERC20 address:</h2>
+              <h4 title="0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78" class="ellipsed" mb-4><a href="https://etherscan.io/address/0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78">0x6f887f6145e3f45afd809C9a0b90Dd64ffaCeE78</a></h4>
               <p style="display: inline-block;">
                 
                 <!-- <a href="javascript:void(0);" class="btn btn-black py-3 px-4 donate" data-chain="polkadot" id="donatedot">Donate DOT</a> -->
@@ -470,7 +513,7 @@
   <script src="js/bn.js"></script>
   <script src="js/polkadot.js"></script>
   <script src="js/main.js"></script>
-
+  
     
   </body>
 </html>
